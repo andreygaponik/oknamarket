@@ -14,14 +14,15 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 	<div class="wrapper">
 		<div class="align">
-			<header class="header">
+			<header class="b-header">
 				<div class="row">
-					<div class="col-lg-3 col-md-3 col-sm-12 header__logo">
+					<div class="col-lg-3 col-md-3 col-sm-12 b-header__logo">
 						<a href="" class="logo"></a>
 					</div>
-					<div class="col-lg-3 col-md-3 col-sm-4 header__location">
+					<div class="col-lg-3 col-md-3 col-sm-4 b-header__location">
 						<div>
 							<span>Выберите город: </span>
 
@@ -39,7 +40,7 @@
 							<p><strong>Соколовского 20а</strong></p>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-3 col-sm-4 col-lg-offset-1 header__hours">
+					<div class="col-lg-3 col-md-3 col-sm-4 col-lg-offset-1 b-header__hours">
 						<div>
 							<p>
 								<span>
@@ -61,7 +62,7 @@
 							</p>
 						</div>
 					</div>
-					<div class="col-lg-2 col-md-2 col-sm-4	header__phones">
+					<div class="col-lg-2 col-md-2 col-sm-4	b-header__phones">
 						<p><strong>+375 (152) 53-08-88</strong></p>
 						<p><strong>+375 (29) 880-1-999</strong></p>
 					</div>
@@ -69,9 +70,9 @@
 			</header>
 		</div>
 
-		<div class="nav">
+		<div class="b-nav">
 			<div class="align">
-				<nav class="nav__menu">
+				<nav class="b-nav__menu">
 				  <li><a href="">Главная</a></li>
 				  <li><a href="">Акции</a></li>
 				  <li><a href="">О компании</a></li>
@@ -85,7 +86,7 @@
 		</div>
 
 		<div class="align">
-			<ul class="list-links">
+			<ul class="b-list-links">
 				<li><a href="">Окна</a></li>
 				<li><a href="">Двери</a></li>
 				<li><a href="">Перегородки</a></li>
@@ -95,39 +96,255 @@
 				<li><a href="">Противопожарные изделия</a></li>
 			</ul>
 		</div>
-		
 		<div class="align">
 			<div class="row">
-				<div class="col-lg-8 calc-windows">
+				<div class="col-lg-8 b-calc">
 					<h2 class="title">Калькулятор: Окна</h2>
-
-					<form action="">
-						<div class="calc-windows__container">
+					<form method="POST" id="form" action="javascript:void(null);" onsubmit="call()">
+						<div class="b-calc__windows">
 							<div class="row">
+
+								<!-- left side -->
 								<div class="col-lg-6">
-									<div class="calc-windows__container__window-box">
-										<div class="calc-windows__container__window-box__level-1">
+									<div class="b-windows__window-box gray">
+										<div class="b-window-box__level-1">
 											1
 										</div>
-										<div class="calc-windows__container__window-box__level-2">
+										<div class="b-window-box__level-2">
 											2
 										</div>
-										<div class="calc-windows__container__window-box__level-3">
-											<div class="calc-windows__container__window-box__level-3__window">
-												3
+
+										<div class="b-window-box__level-3">
+											<div class="b-level-3__window">
+												<div class="b-window__left">
+													<img src="img/calc/window1.jpg" alt="">
+												</div>
+												<div class="b-window__center">
+													<img src="img/calc/window-center1.jpg" alt="">
+												</div>
+												<div class="b-window__right">
+													<img src="img/calc/window1.jpg" alt="">
+												</div>
+
+												<p class="b-window__height">В. <span>1600 мм</span></p>
+												<p class="b-window__width">Ш. <span>2500 мм</span></p>
+											</div>
+
+											<div class="align">
+												<div class="form-group b-window-box__field">
+													<label for="b-level-3__window-left">Левая <i class="star">*</i></label>
+
+													<select id="b-level-3__window-left">
+												    <option value="Глухая">Глухая</option>
+												    <option value="Поворотная">Поворотная</option>
+												    <option value="Поворотно-откидная">Поворотно-откидная</option>
+													</select> 
+												</div>
+
+												<div class="form-group b-window-box__field">
+													<label for="b-level-3__window-center">Центральная <i class="star">*</i></label>
+
+													<select id="b-level-3__window-center">
+												    <option value="Глухая">Глухая</option>
+												    <option value="Поворотная">Поворотная</option>
+												    <option value="Поворотно-откидная">Поворотно-откидная</option>
+													</select> 
+												</div>
+
+												<div class="form-group b-window-box__field">
+													<label for="b-level-3__window-right">Правая <i class="star">*</i></label>
+
+													<select id="b-level-3__window-right">
+												    <option value="Глухая">Глухая</option>
+												    <option value="Поворотная">Поворотная</option>
+												    <option value="Поворотно-откидная">Поворотно-откидная</option>
+													</select> 
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
+
+								<!-- right side -->
 								<div class="col-lg-6">
-									<div class="col-lg-12">2</div>
-									<div class="col-lg-12">3</div>
+
+									<!-- window box first block -->
+									<div class="gray b-calc__default">
+										<div class="align">
+											<h3>Количество створок <i>*</i></h3>
+
+											<div class="btn-group btn-group-horisontal b-default__select" data-toggle="buttons">
+								        <label class="btn active b-default__window1">
+								          <input type="radio" name='window' checked>
+								          <i class="fa fa-circle-o fa-2x"></i>
+								          <i class="fa fa-dot-circle-o fa-2x"></i>
+								          <span>Одна</span>
+								        </label>
+								        <label class="btn b-default__window2">
+								          <input type="radio" name='window'>
+								          <i class="fa fa-circle-o fa-2x"></i>
+								          <i class="fa fa-dot-circle-o fa-2x"></i>
+								          <span>Две</span>
+								        </label>
+								        <label class="btn b-default__window3">
+								          <input type="radio" name='window'>
+								          <i class="fa fa-circle-o fa-2x"></i>
+								          <i class="fa fa-dot-circle-o fa-2x"></i>
+								          <span>Три</span>
+								        </label>
+								      </div>
+
+								      <div class="form-group b-window-box__field">
+													<label for="b-field__width">
+														Ширина в мм. 
+														<i class="star">*</i>
+													</label>
+													<input id="b-field__width" name="b-field__width" value="" type="text" class="b-field__input">
+											</div>
+
+											<div class="form-group b-window-box__field">
+													<label for="b-field__height">
+														Высота в мм.
+														<i class="star">*</i>
+													</label>
+													<input id="b-field__height" name="b-field__height" value="" type="text" class="b-field__input">
+											</div>
+										</div>
+									</div>
+									
+									<!-- window box second block -->
+									<div class="gray b-calc__default">
+										<div class="align">
+											<div class="form-group b-window-box__field">
+												<label for="b-level-3__window-left">Профиль <i class="star">*</i></label>
+
+												<select id="b-level-3__window-left">
+											    <option value="Глухая">Глухая</option>
+											    <option value="Поворотная">Поворотная</option>
+											    <option value="Поворотно-откидная">Поворотно-откидная</option>
+												</select> 
+											</div>
+
+											<div class="form-group b-window-box__field">
+												<label for="b-level-3__window-center">Цвет <i class="star">*</i></label>
+
+												<select id="b-level-3__window-center">
+											    <option value="Глухая">Глухая</option>
+											    <option value="Поворотная">Поворотная</option>
+											    <option value="Поворотно-откидная">Поворотно-откидная</option>
+												</select> 
+											</div>
+
+											<div class="form-group b-window-box__field">
+												<label for="b-level-3__window-right">Фурнитура <i class="star">*</i></label>
+
+												<select id="b-level-3__window-right">
+											    <option value="Глухая">Глухая</option>
+											    <option value="Поворотная">Поворотная</option>
+											    <option value="Поворотно-откидная">Поворотно-откидная</option>
+												</select> 
+											</div>
+
+											<div class="form-group b-window-box__field">
+												<label for="b-level-3__window-right">Заполнение <i class="star">*</i></label>
+
+												<select id="b-level-3__window-right">
+											    <option value="Глухая">Глухая</option>
+											    <option value="Поворотная">Поворотная</option>
+											    <option value="Поворотно-откидная">Поворотно-откидная</option>
+												</select> 
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="col-lg-12">
+									<div class="gray b-calc__default">
+										<div class="row">
+											<div class="col-lg-3">
+												<div class="align">
+													<h3>Подоконник:</h3>
+												</div>
+											</div>
+											<div class="col-lg-9" id="b-calc__sill">
+
+												<!-- field -->
+												<!-- <div class="b-default__add-field">
+													<div class="b-sill__style">
+														<select id="sill-style">
+													    <option value="Глухая">Металл (белый)</option>
+													    <option value="Поворотная">Металл (белый)</option>
+													    <option value="Поворотно-откидная">Металл (белый)</option>
+														</select> 
+													</div>
+													
+													<div class="b-sill__width">
+														<label for="b-level-3__window-width">Ширина</label>
+
+														<select id="b-level-3__window-width">
+													    <option value="Глухая">2500</option>
+													    <option value="Поворотная">3000</option>
+													    <option value="Поворотно-откидная">3500</option>
+														</select> 
+													</div>
+													<div class="b-sill__height">
+														<label for="b-level-3__window-height">Длина</label>
+
+														<select id="b-level-3__window-height">
+													    <option value="Глухая">2500</option>
+													    <option value="Поворотная">3000</option>
+													    <option value="Поворотно-откидная">3500</option>
+														</select> 
+													</div>
+
+													<a href="" class="sill__remove"></a>
+												</div> -->
+												
+												<!-- field -->
+												<!-- <div class="b-default__add-field">
+													<div class="b-sill__style">
+														<select id="sill-style">
+													    <option value="Глухая">Металл (белый)</option>
+													    <option value="Поворотная">Металл (белый)</option>
+													    <option value="Поворотно-откидная">Металл (белый)</option>
+														</select> 
+													</div>
+													
+													<div class="b-sill__width">
+														<label for="b-level-3__window-width">Ширина</label>
+
+														<select id="b-level-3__window-width">
+													    <option value="Глухая">2500</option>
+													    <option value="Поворотная">3000</option>
+													    <option value="Поворотно-откидная">3500</option>
+														</select> 
+													</div>
+													<div class="b-sill__height">
+														<label for="b-level-3__window-height">Длина</label>
+
+														<select id="b-level-3__window-height">
+													    <option value="Глухая">2500</option>
+													    <option value="Поворотная">3000</option>
+													    <option value="Поворотно-откидная">3500</option>
+														</select> 
+													</div>
+
+													<a href="" class="sill__remove"></a>
+												</div> -->
+
+													<a href="" class="add-field" id="add-field__sill">+ Добавить</a>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</form>
 
 				</div>
+
 				<div class="col-lg-4">
 					<h2 class="title">Оформить заявку</h2>
 					<div class="row">
@@ -139,97 +356,92 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-lg-12">
-					full
-				</div>
-			</div>
+			
 		</div>
 		
-		<section class="contact-box row">
-			<div class="col-lg-3 col-md-3 col-sm-6">
-				<div class="contact-box__col-contacts">
-					<p>
-						<strong>Контакты:</strong>
-					</p>
-					<p>
-						+375 (152) 53-08-88
-					</p>
-					<p>
-						+375 (29) 880-19-99
-					</p>
-					<p>
-						tkpinvest@gmail.com
-					</p>
+		<section class="b-contact row">
+				<div class="col-lg-3 col-md-3 col-sm-6">
+					<div class="b-contact__contacts">
+						<p>
+							<strong>Контакты:</strong>
+						</p>
+						<p>
+							+375 (152) 53-08-88
+						</p>
+						<p>
+							+375 (29) 880-19-99
+						</p>
+						<p>
+							tkpinvest@gmail.com
+						</p>
+					</div>
 				</div>
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-6">
-				<div class="contact-box__col-contacts">
-					<p>
-						<strong>Адрес:</strong>
-					</p>
-					<p>
-						+375 (152) 53-08-88
-					</p>
-					<p>
-						+375 (29) 880-19-99
-					</p>
-					<p>
-						tkpinvest@gmail.com
-					</p>
+				<div class="col-lg-3 col-md-3 col-sm-6">
+					<div class="b-contact__contacts">
+						<p>
+							<strong>Адрес:</strong>
+						</p>
+						<p>
+							+375 (152) 53-08-88
+						</p>
+						<p>
+							+375 (29) 880-19-99
+						</p>
+						<p>
+							tkpinvest@gmail.com
+						</p>
+					</div>
 				</div>
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-6">
-				<div class="contact-box__col-contacts">
-					<p>
-						<strong>Время работы:</strong>
-					</p>
-					<p>
-						+375 (152) 53-08-88
-					</p>
-					<p>
-						+375 (29) 880-19-99
-					</p>
-					<p>
-						tkpinvest@gmail.com
-					</p>
+				<div class="col-lg-3 col-md-3 col-sm-6">
+					<div class="b-contact__contacts">
+						<p>
+							<strong>Время работы:</strong>
+						</p>
+						<p>
+							+375 (152) 53-08-88
+						</p>
+						<p>
+							+375 (29) 880-19-99
+						</p>
+						<p>
+							tkpinvest@gmail.com
+						</p>
+					</div>
 				</div>
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-6">
-				<div class="contact-box__col-links">
-					<p><a href="">Вызвать замерщика</a></p>
-					<p><a href="">Рассчитать стоимость</a></p>
-					<p><a href="">Заказать обратный звонок</a></p>
+				<div class="col-lg-3 col-md-3 col-sm-6">
+					<div class="b-contact__links">
+						<p><a href="">Вызвать замерщика</a></p>
+						<p><a href="">Рассчитать стоимость</a></p>
+						<p><a href="">Заказать обратный звонок</a></p>
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<section class="row details">
-			<div class="col-lg-5">
-				<p>
-					<strong>Банковские реквизиты</strong>
-				</p>
-				<p>
-					р/c 3012408790014 в ОАО “Технобанк” код 182 ОКПО 298818894000 УНП 590998699
-				</p>
-			</div>
-			<div class="col-lg-2 col-lg-offset-4 social">
-				<a href="" class="ok"></a>
-				<a href="" class="goo"></a>
-				<a href="" class="fb"></a>
-				<a href="" class="vk"></a>
-			</div>
-		</section>
+			<section class="row details">
+				<div class="col-lg-5">
+					<p>
+						<strong>Банковские реквизиты</strong>
+					</p>
+					<p>
+						р/c 3012408790014 в ОАО “Технобанк” код 182 ОКПО 298818894000 УНП 590998699
+					</p>
+				</div>
+				<div class="col-lg-2 col-lg-offset-4 social">
+					<a href="" class="ok"></a>
+					<a href="" class="goo"></a>
+					<a href="" class="fb"></a>
+					<a href="" class="vk"></a>
+				</div>
+			</section>
 
 		<footer class="footer">
-		<div class="align">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-cm-12"><p>© 2003-2016. ООО «ТКПинвест» </p></div>
-				<div class="col-lg-6 col-md-6 col-cm-12"><p>Сайт разработан Migsoft</p></div>
+			<div class="align">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-cm-12"><p>© 2003-2016. ООО «ТКПинвест» </p></div>
+					<div class="col-lg-6 col-md-6 col-cm-12"><p>Сайт разработан Migsoft</p></div>
+				</div>
 			</div>
-		</div>
-	</footer>
+		</footer>
 	</div>
 
 	<a href="" class="stock"></a>
