@@ -11,6 +11,7 @@
 
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/jquery.formstyler.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -134,7 +135,7 @@
 												<div class="form-group b-window-box__field">
 													<label for="b-level-3__window-left">Левая <i class="star">*</i></label>
 
-													<select id="b-level-3__window-left">
+													<select id="b-level-3__window-left" class="custom-select">
 												    <option value="Глухая">Глухая</option>
 												    <option value="Поворотная">Поворотная</option>
 												    <option value="Поворотно-откидная">Поворотно-откидная</option>
@@ -144,7 +145,7 @@
 												<div class="form-group b-window-box__field">
 													<label for="b-level-3__window-center">Центральная <i class="star">*</i></label>
 
-													<select id="b-level-3__window-center">
+													<select id="b-level-3__window-center " class="custom-select">
 												    <option value="Глухая">Глухая</option>
 												    <option value="Поворотная">Поворотная</option>
 												    <option value="Поворотно-откидная">Поворотно-откидная</option>
@@ -154,7 +155,7 @@
 												<div class="form-group b-window-box__field">
 													<label for="b-level-3__window-right">Правая <i class="star">*</i></label>
 
-													<select id="b-level-3__window-right">
+													<select id="b-level-3__window-right " class="custom-select">
 												    <option value="Глухая">Глухая</option>
 												    <option value="Поворотная">Поворотная</option>
 												    <option value="Поворотно-откидная">Поворотно-откидная</option>
@@ -218,7 +219,7 @@
 											<div class="form-group b-window-box__field">
 												<label for="b-level-3__window-left">Профиль <i class="star">*</i></label>
 
-												<select id="b-level-3__window-left">
+												<select id="b-level-3__window-left " class="custom-select">
 											    <option value="Глухая">Глухая</option>
 											    <option value="Поворотная">Поворотная</option>
 											    <option value="Поворотно-откидная">Поворотно-откидная</option>
@@ -228,7 +229,7 @@
 											<div class="form-group b-window-box__field">
 												<label for="b-level-3__window-center">Цвет <i class="star">*</i></label>
 
-												<select id="b-level-3__window-center">
+												<select id="b-level-3__window-center " class="custom-select">
 											    <option value="Глухая">Глухая</option>
 											    <option value="Поворотная">Поворотная</option>
 											    <option value="Поворотно-откидная">Поворотно-откидная</option>
@@ -238,7 +239,7 @@
 											<div class="form-group b-window-box__field">
 												<label for="b-level-3__window-right">Фурнитура <i class="star">*</i></label>
 
-												<select id="b-level-3__window-right">
+												<select id="b-level-3__window-right " class="custom-select">
 											    <option value="Глухая">Глухая</option>
 											    <option value="Поворотная">Поворотная</option>
 											    <option value="Поворотно-откидная">Поворотно-откидная</option>
@@ -248,7 +249,7 @@
 											<div class="form-group b-window-box__field">
 												<label for="b-level-3__window-right">Заполнение <i class="star">*</i></label>
 
-												<select id="b-level-3__window-right">
+												<select id="b-level-3__window-right " class="custom-select">
 											    <option value="Глухая">Глухая</option>
 											    <option value="Поворотная">Поворотная</option>
 											    <option value="Поворотно-откидная">Поворотно-откидная</option>
@@ -269,72 +270,104 @@
 												</div>
 											</div>
 											<div class="col-lg-9" id="b-calc__sill">
-
-												<!-- field -->
-												<!-- <div class="b-default__add-field">
-													<div class="b-sill__style">
-														<select id="sill-style">
-													    <option value="Глухая">Металл (белый)</option>
-													    <option value="Поворотная">Металл (белый)</option>
-													    <option value="Поворотно-откидная">Металл (белый)</option>
-														</select> 
-													</div>
-													
-													<div class="b-sill__width">
-														<label for="b-level-3__window-width">Ширина</label>
-
-														<select id="b-level-3__window-width">
-													    <option value="Глухая">2500</option>
-													    <option value="Поворотная">3000</option>
-													    <option value="Поворотно-откидная">3500</option>
-														</select> 
-													</div>
-													<div class="b-sill__height">
-														<label for="b-level-3__window-height">Длина</label>
-
-														<select id="b-level-3__window-height">
-													    <option value="Глухая">2500</option>
-													    <option value="Поворотная">3000</option>
-													    <option value="Поворотно-откидная">3500</option>
-														</select> 
-													</div>
-
-													<a href="" class="sill__remove"></a>
-												</div> -->
 												
-												<!-- field -->
-												<!-- <div class="b-default__add-field">
-													<div class="b-sill__style">
-														<select id="sill-style">
-													    <option value="Глухая">Металл (белый)</option>
-													    <option value="Поворотная">Металл (белый)</option>
-													    <option value="Поворотно-откидная">Металл (белый)</option>
-														</select> 
+												<a href="" class="add-field" id="add-field__sill">+ Добавить</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-12">
+									<div class="gray b-calc__default">
+										<div class="row">
+											<div class="col-lg-3">
+												<div class="align">
+													<h3>Отлив:</h3>
+												</div>
+											</div>
+											<div class="col-lg-9" id="b-calc__tide">
+												
+												<a href="" class="add-field" id="add-field__tide">+ Добавить</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-12">
+									<div class="gray b-calc__default">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="align">
+													<div class="row">
+														<div class="col-lg-12">
+															<h3><strong>Разное</strong></h3>
+														</div>
+														<div class="col-lg-6">
+
+															<div class="form-group b-window-box__field">
+																<label for="b-level-3__window-right">Москитная сетка, шт. </label>
+																
+																<div class="b-calc__counter q">
+																	<a href="" class="minus"><span>-</span></a>
+																	<input type="text" disabled value="0" class="input-value">
+																	<a href="" class="plus"><span>+</span></a>
+																</div>
+															</div>
+
+															<div class="form-group b-window-box__field">
+																<label for="b-level-3__window-right">Вентиляционный клапан, шт. </label>
+																
+																<div class="b-calc__counter b">
+																	<a href="" class="minus"><span>-</span></a>
+																	<input type="text" disabled value="0" class="input-value">
+																	<a href="" class="plus"><span>+</span></a>
+																</div>
+															</div>
+
+															<div class="form-group b-window-box__field">
+																<label for="b-level-3__window-right">Набор по уходу, шт. </label>
+																
+																<div class="b-calc__counter b">
+																	<a href="" class="minus"><span>-</span></a>
+																	<input type="text" disabled value="0" class="input-value">
+																	<a href="" class="plus"><span>+</span></a>
+																</div>
+															</div>
+
+															<div class="form-group b-window-box__field">
+																<label for="b-level-3__window-right">Шпрос, кол-во полей </label>
+																
+																<div class="b-calc__counter b">
+																	<a href="" class="minus"><span>-</span></a>
+																	<input type="text" disabled value="0" class="input-value">
+																	<a href="" class="plus"><span>+</span></a>
+																</div>
+															</div>
+
+														</div>
+														<div class="col-lg-6">
+															<div class="form-group b-window-box__field">
+																<label for="b-level-3__window-right">Детский замок, шт. </label>
+																
+																<div class="b-calc__counter q">
+																	<a href="" class="minus"><span>-</span></a>
+																	<input type="text" disabled value="0" class="input-value">
+																	<a href="" class="plus"><span>+</span></a>
+																</div>
+															</div>
+
+															<div class="form-group b-window-box__field">
+																<label for="b-level-3__window-right">Отделочная полоса, м.п. </label>
+																
+																<div class="b-calc__counter b">
+																	<a href="" class="minus"><span>-</span></a>
+																	<input type="text" disabled value="0" class="input-value">
+																	<a href="" class="plus"><span>+</span></a>
+																</div>
+															</div>
+														</div>
 													</div>
-													
-													<div class="b-sill__width">
-														<label for="b-level-3__window-width">Ширина</label>
-
-														<select id="b-level-3__window-width">
-													    <option value="Глухая">2500</option>
-													    <option value="Поворотная">3000</option>
-													    <option value="Поворотно-откидная">3500</option>
-														</select> 
-													</div>
-													<div class="b-sill__height">
-														<label for="b-level-3__window-height">Длина</label>
-
-														<select id="b-level-3__window-height">
-													    <option value="Глухая">2500</option>
-													    <option value="Поворотная">3000</option>
-													    <option value="Поворотно-откидная">3500</option>
-														</select> 
-													</div>
-
-													<a href="" class="sill__remove"></a>
-												</div> -->
-
-													<a href="" class="add-field" id="add-field__sill">+ Добавить</a>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -455,6 +488,7 @@
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.formstyler.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>

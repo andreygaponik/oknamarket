@@ -949,11 +949,15 @@ body p
 	font-weight: 400;
 	font-size: 16px;
 	float: left;
-	/* line-height: 40px; */
+	
 }
 
 .b-window-box__field .select {
 	text-align: left;
+}
+
+.b-window-box__field label {
+  line-height: 36px;
 }
 
 .b-window-box__field .form-control {
@@ -978,12 +982,66 @@ body p
 .add-field {
 	font-size: 16px;
 	border-bottom: 1px dashed #777777;
-	color: #777777;
-	text-decoration: none;
+	color: #777777 !important;
+	text-decoration: none !important;
 	display: inline-block;
 	margin-bottom: 25px;
-	margin-top: 25px;
+	margin-top: 11px;
 }
+
+.b-calc__counter {
+    float: right;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 0;
+    height: 35px;
+}
+
+.b-calc__counter a {
+    width: 30px;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    position: relative;
+    font-size: 14px;
+    color: #777;
+    overflow: hidden;
+}
+
+.b-calc__counter a:hover {
+    background: #e31e24;
+    color: #fff;
+}
+
+.b-calc__counter a span {
+    line-height: 33px;
+}
+
+.b-calc__counter a:first-child {
+    border-right: 1px solid #ddd;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.b-calc__counter a:last-child {
+    border-left: 1px solid #ddd;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.b-calc__counter input {
+    width: 75px;
+    font-size: 14px;
+    border: 0;
+    background: #fff;
+    text-align: center;
+    color: #777777;
+    height: 100%;
+}
+
+
 
 /*CUSTOM RADIO BUTTONS*/
 
@@ -1094,21 +1152,9 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 	margin-right: 45px;
 }
 
-.b-sill__width .select-styled,
-.b-sill__width .select,
-.b-sill__height .select-styled,
-.b-sill__height .select {
-	width: 75px;
-}
-
 .b-sill__width label,
 .b-sill__height label {
 	margin-right: 15px;
-}
-
-.b-sill__width .select-options,
-.b-sill__height .select-options {
-	width: 100px;
 }
 
 .sill__remove {
@@ -1124,80 +1170,148 @@ div[data-toggle="buttons"] label:active, div[data-toggle="buttons"] label.active
 
 /*CUSTOM SELECT MENU*/
 
-.select-hidden {
-  display: none;
-  visibility: hidden;
-  padding-right: 10px;
-  font-size: 16px;
-  width: 155px;
-  height: 50px;
+.jq-selectbox__select {
+    width: 155px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #dddddd;
+    box-shadow: none;
 }
 
-.select {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  font-size: 16px;
-  width: 155px;
-  height: 50px;
+.jq-selectbox__trigger {
+    border: none;
 }
 
-.select-styled {
-  width: 155px;
-  overflow: hidden;
-	height: 35px;
-	border: 1px solid #dddddd;
-	border-radius: 5px;
-	line-height: 33px;
-	padding-left: 10px;
-	font-size: 14px;
-	color: #000;
-	background: #fff;
+.jq-selectbox__select-text {
+    text-align: left;
 }
 
-.select-styled:after {
-  content:"";
-  width: 10px;
-  height: 7px;
-  background: url(../img/arrow-select-bottom.png) 0 0 no-repeat;
-  position: absolute;
-  top: 14px;
-  right: 10px;
+.jq-selectbox__select:hover {
+    background: #fff !important;
 }
 
-.select-styled.active:after {
-	background: url(../img/arrow-select-top.png) 0 0 no-repeat;
+.jq-selectbox__trigger-arrow {
+    border: none;
+    width: 10px;
+    height: 7px;
+    background: url(../img/arrow-select-bottom.png) 0 0 no-repeat;
 }
 
-.select-options {
-  display: none; 
-  position: absolute;
-  top: 100%;
-  width: 236px;
-  right: 0;
-  left: 0;
-  z-index: 999;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  -webkit-box-shadow: 0 4px 19px -4px rgba(0,0,0,.59);
-    -moz-box-shadow: 0 4px 19px -4px rgba(0,0,0,.59);
-      box-shadow: 0 4px 19px -4px rgba(0,0,0,.59);
-	background: #fff;
-	border-radius: 5px;
-	padding-left: 20px;
+.jq-selectbox.opened .jq-selectbox__trigger-arrow {
+    background: url(../img/arrow-select-top.png) 0 0 no-repeat;
+}
+
+.jq-selectbox li:hover {
+    background: #fff;
+}
+
+.jq-selectbox li.selected {
+    background: #fff;
+}
+
+.jq-selectbox li.selected {
+    color: #000;
 }
 
 .b-calc li {
   margin: 0;
+  text-align: left;
   padding: 12px 0;
+  padding-left: 10px;
   color: #000;
+}
+
+.jq-selectbox ul {
+    border-radius: 5px;
 }
 
 .b-calc li:hover {
 	color: #e31e24
 }
 
+.b-sill__width .jq-selectbox__select,
+.b-sill__height .jq-selectbox__select {
+    width: 75px;
+    padding: 0;
+    padding-left: 10px;
+}
+
+.b-default__add-field {
+    margin-bottom: 15px;
+}
+
+/*CATALOG PAGE*/
+
+.b-tile-more {
+  margin-bottom: 20px;
+}
+
+.b-tile-more .row > div {
+  margin-bottom: 30px;
+}
+
+.b-more__content h3 {
+  font-weight: 900;
+  font-size: 30px;
+  margin: 0;
+  margin-top: 22px;
+  margin-bottom: 5px;
+}
+
+.b-content__link {
+  color: #777 !important;
+  font-size: 16px;
+  text-decoration: underline
+}
+
+.b-content__link:hover {
+  text-decoration: none;
+}
+
+.b-tile-min-more .b-more__content {
+  margin-bottom: 30px;
+}
+
+.b-tile-min-more .b-more__content .b-more__img-box {
+  margin-bottom: 15px;
+}
+
+/*ASIDE*/
+
+.b-aside {
+  background: #f3f3f3;
+  position: relative;
+}
+
+
+.b-aside__list {
+  margin: 0;
+  padding: 0;
+}
+
+.b-aside__list li {
+  list-style: none;
+  border-bottom: 2px solid #fff;
+}
+
+.b-aside__list li a {
+  padding: 0 15px;
+  line-height: 45px;
+  display: block;
+  font-size: 16px;
+  color: #202020;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.b-list__active a, .b-aside__list li a:hover {
+  background: #e31e24;
+  color: #fff !important;
+}
+
+#handle {
+  display: none;
+}
 
 /*MEDIA*/
 

@@ -1,67 +1,71 @@
-function selectWrapper(select) {
-	$(select).each(function(){
-    var $this = $(this), numberOfOptions = $(this).children('option').length;
-  
-    $this.addClass('select-hidden'); 
-    $this.wrap('<div class="select"></div>');
-    $this.after('<div class="select-styled"></div>');
-
-    var $styledSelect = $this.next('div.select-styled');
-    $styledSelect.text($this.children('option').eq(0).text());
-  
-    var $list = $('<ul />', {
-        'class': 'select-options'
-    }).insertAfter($styledSelect);
-  
-    for (var i = 0; i < numberOfOptions; i++) {
-        $('<li />', {
-            text: $this.children('option').eq(i).text(),
-            rel: $this.children('option').eq(i).val()
-        }).appendTo($list);
-    }
-  
-    var $listItems = $list.children('li');
-  
-    $styledSelect.click(function(e) {
-        e.stopPropagation();
-        $('div.select-styled.active').not(this).each(function(){
-            $(this).removeClass('active').next('ul.select-options').hide();
-        });
-        $(this).toggleClass('active').next('ul.select-options').toggle();
-    });
-  
-    $listItems.click(function(e) {
-        e.stopPropagation();
-        $styledSelect.text($(this).text()).removeClass('active');
-        $this.val($(this).attr('rel'));
-        $list.hide();
-        //console.log($this.val());
-    });
-  
-    $(document).click(function() {
-        $styledSelect.removeClass('active');
-        $list.hide();
-    });
-
-	});
-}
-
 $(function() {
-
 	// align description block in slider
 	var slideDescription = $('.slide__item__description').height();
 	$('.slide__item__description').css('marginTop', -slideDescription / 2);
 
 	// align description block in suggestions 
-
 	var suggestionsDescription = $('.b-full__description').height();
 	$('.b-full__description').css('marginTop', -suggestionsDescription / 2);
 
-	selectWrapper('select');
-
-	// var suggestionsDescription = $('.suggestions__min__description').height();
-	// $('.suggestions__min__description').css('marginTop', -suggestionsDescription / 2);
+	// selectWrapper('select');
+  $('.custom-select').styler({
+    selectSmartPositioning: false 
+  });
 });
+
+// ADD FIELDS ON CALCULATOR
+
+function addField(item) {
+  $('<div class="b-default__add-field"><div class="b-sill__style"><select id="sill-style" class="custom-select"><option value="Глухая">Металл (белый)</option><option value="Поворотная">Металл (белый)</option><option value="Поворотно-откидная">Металл (белый)</option></select></div><div class="b-sill__width"><label for="b-level-3__window-width">Ширина</label><select id="b-level-3__window-width" class="custom-select"><option value="Глухая">2500</option><option value="Поворотная">3000</option><option value="Поворотно-откидная">3500</option></select></div><div class="b-sill__height"><label for="b-level-3__window-height">Длина</label><select id="b-level-3__window-height" class="custom-select"><option value="Глухая">2500</option><option value="Поворотная">3000</option><option value="Поворотно-откидная">3500</option></select></div><a href="" class="sill__remove"></a></div>')
+    .fadeIn('slow')
+    .prependTo(item);
+
+  $('.custom-select').styler({
+    selectSmartPositioning: false 
+  });
+
+  $('.sill__remove').click(function(event) {
+    event.preventDefault();
+
+    $(this).parent('.b-default__add-field').remove();
+  });
+};
+
+$('#add-field__sill').click(function(event) {
+  event.preventDefault();
+
+  addField('#b-calc__sill');
+});
+
+$('#add-field__tide').click(function(event) {
+  event.preventDefault();
+
+  addField('#b-calc__tide');
+});
+
+// COUNTER
+var i;
+
+$('.plus').click(function(event) {
+  event.preventDefault();
+
+  i = $(this).parent().find('.input-value').val();
+  $(this).parent().find('.input-value').attr('value', ++i);
+  console.log(i);
+
+});
+
+$('.minus').click(function(event) {
+  event.preventDefault();
+
+  i = $(this).parent().find('.input-value').val();
+
+  if (i > 0 && i != -1) {
+    $(this).parent().find('.input-value').attr('value', --i);
+  }
+});
+
+// SLIDER
 
 $('.multiple-items').slick({
   infinite: true,
@@ -73,63 +77,20 @@ $('.multiple-items').slick({
   draggable: false
 });
 
-    $('#add-field__sill').click(function(event) {
-    	event.preventDefault();
+// ASIDE
 
-      $('<div class="b-default__add-field"><div class="b-sill__style"><select id="sill-style"><option value="Глухая">Металл (белый)</option><option value="Поворотная">Металл (белый)</option><option value="Поворотно-откидная">Металл (белый)</option></select></div><div class="b-sill__width"><label for="b-level-3__window-width">Ширина</label><select id="b-level-3__window-width"><option value="Глухая">2500</option><option value="Поворотная">3000</option><option value="Поворотно-откидная">3500</option></select></div><div class="b-sill__height"><label for="b-level-3__window-height">Длина</label><select id="b-level-3__window-height"><option value="Глухая">2500</option><option value="Поворотная">3000</option><option value="Поворотно-откидная">3500</option></select></div><a href="" class="sill__remove"></a></div>')
-				.fadeIn('slow')
-        .prependTo('#b-calc__sill');
+$('.b-aside__list a').click(function(event) {
+  event.preventDefault();
 
+  var anchor = $(this).attr('href');
 
-      var a = $('#b-calc__sill').find('select');
-      var b = $('#b-calc__sill').find('.select select');
+  $('.b-aside__list li').removeClass('b-list__active');
 
+  $(this).parent().addClass('b-list__active');
+  $(anchor + '').css('display','block');
 
-      if (a.parent().parent('.select')) {
-      	console.log('acc')
-      } else {
-      	selectWrapper(a);
-      }
-      console.log(a.parent());
-
-      console.log(b.length);
-
-      
-    });
-
-    $('#remove').click(function() {
-    if(i > 1) {
-        $('.field:last').remove();
-        i--;
-    }
-    });
-
-    $('#reset').click(function() {
-    while(i > 2) {
-        $('.field:last').remove();
-        i--;
-    }
-    });
-
-    // here's our click function for when the forms submitted
-
-    $('.submit').click(function(){
-    var answers = [];
-
-    $.each($('.field'), function() {
-        answers.push($(this).val());
-    });
-
-    if(answers.length == 0) {
-        answers = "none";
-    }  
-
-    alert(answers);
-
-    return false;
-
-    });
-
+  console.log(anchor);
+});
 
 // AJAX
 
